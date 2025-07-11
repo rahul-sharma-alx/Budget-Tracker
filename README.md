@@ -69,4 +69,4 @@ This project is licensed under the MIT License.
 
 ---
 
-> Crafted with clarity by [Your Name](https://github.com/your-username)
+> Crafted with clarity by [Rahul Sharma](https://github.com/rahul-sharma-alx)
