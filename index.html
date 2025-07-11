@@ -652,8 +652,13 @@
             if (!currentUserId) return;
             const q = query(collection(db, `users/${currentUserId}/transactions`), orderBy('date', 'desc'));
             onSnapshot(q, (snapshot) => {
-                transactions = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-                updateUI();
+                try {
+                    transactions = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                    updateUI();
+                } catch (error) {
+                    console.error("Error updating UI for transactions:", error);
+                    // Optionally, display a non-intrusive error message to the user
+                }
             });
         }
 
